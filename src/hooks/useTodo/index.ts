@@ -52,6 +52,12 @@ export const useTodoProvider = () => {
       return false;
     } else {
       todoList.value.splice(index, 1);
+      if (
+        pagination.pagination.value.currentPage > 1 &&
+        pagination.paginationList.value.length === 0
+      ) {
+        pagination.pagination.value.currentPage--;
+      }
     }
   };
 
