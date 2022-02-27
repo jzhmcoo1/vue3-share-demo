@@ -1,17 +1,5 @@
 <template>
-  <n-page-header class="mb-3">
-    <template #title> Vue3 Todolist </template>
-    <template #extra>
-      <n-button text @click="handleThemeClick">
-        <template v-if="theme === 1" #icon>
-          <light-mode-outlined />
-        </template>
-        <template #icon v-else>
-          <dark-mode-outlined />
-        </template>
-      </n-button>
-    </template>
-  </n-page-header>
+  <n-h3>Vue3 TodoList</n-h3>
   <div class="flex">
     <n-input
       v-model:value="inputValue"
@@ -24,17 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-import { useTodos, useTheme } from '@/hooks';
+import { useTodos } from '@/hooks';
 import { computed, ref, watch } from 'vue';
 import { nanoid } from 'nanoid';
-import { LightModeOutlined, DarkModeOutlined } from '@vicons/material';
-
-// theme
-
-const { theme, changeTheme } = useTheme();
-const handleThemeClick = () => changeTheme();
-
-// todos
 
 const todo = useTodos();
 const inputValue = ref('');

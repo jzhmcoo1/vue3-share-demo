@@ -1,7 +1,9 @@
 <template>
-  <TodoHeader />
-  <TodoContent />
-  <TodoFooter />
+  <div>
+    <TodoHeader />
+    <TodoContent />
+    <TodoFooter />
+  </div>
 </template>
 
 <script lang="ts" setup>
