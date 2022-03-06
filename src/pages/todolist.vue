@@ -8,7 +8,7 @@ import TodoList from '@/components/todolist/index.vue';
 import { useTodoProvider } from '@/hooks/useTodo';
 
 export default defineComponent({
-  name: '',
+  name: 'TodoListPage',
   components: {
     TodoList,
   },

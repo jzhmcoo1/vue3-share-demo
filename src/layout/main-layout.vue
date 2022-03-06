@@ -13,11 +13,7 @@
             }"
           >
             <router-view v-slot="{ Component }">
-              <transition>
-                <keep-alive>
-                  <component :is="Component" />
-                </keep-alive>
-              </transition>
+              <component :is="Component" />
             </router-view>
           </n-layout-content>
         </n-layout>

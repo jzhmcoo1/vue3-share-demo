@@ -3,6 +3,7 @@
     <n-h3 prefix="bar">ref</n-h3>
     <n-button @click="counter++">counter + 1</n-button>
     <n-h4>Counter: {{ counter }}</n-h4>
+    <n-h4>Nested Counter: {{ nested.counter.value }}</n-h4>
 
     <n-h3 prefix="bar">reactive</n-h3>
     <n-h4>使用toRefs可以解构reactive，且保持响应式</n-h4>
@@ -30,6 +31,11 @@ export default defineComponent({
     console.log(props, context);
 
     const counter = ref(0);
+    console.log(counter);
+
+    const nested = {
+      counter,
+    };
 
     const state = reactive({
       foo: 1,
@@ -85,6 +91,7 @@ export default defineComponent({
 
     return {
       counter,
+      nested,
       ...toRefs(state),
       // foo,
       // bar,
